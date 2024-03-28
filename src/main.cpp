@@ -164,7 +164,7 @@ void loop() {
 
   unsigned long currentTime = millis();
 
-  if (currentTime - time >= 5000) {
+  if (currentTime - time >= 60000) {
     sendBatteryStatus();
     time = currentTime;
   }
