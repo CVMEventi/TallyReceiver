@@ -23,7 +23,7 @@
 #define TALLY_OFF 0
 #define TALLY_TYPE_PROGRAM 0
 #define TALLY_TYPE_PREVIEW 1
-#define TALLY_NUMBER_PINS {A0, A1, A2, A3}
+#define TALLY_NUMBER_PINS {A0, A1, A2}
 #define CHANNEL_PIN A3
 
 RH_RF69 rf69(RFM69_CS, RFM69_INT);
@@ -46,7 +46,7 @@ void readConfiguration() {
   tallyNumber = tallyNumber + value1 * 1 + value2 * 2 + value3 * 4;
   rfManager.setThisAddress(tallyNumber);
 
-  useCustomFrequency = !digitalRead(dipSwitchPins[3]);
+  useCustomFrequency = !digitalRead(CHANNEL_PIN);
 }
 
 void sendBatteryStatus() {
